@@ -7,7 +7,7 @@
 
 ### Features
 
-- [ ] Cadastro de Usuario
+- [x] Cadastro de Usuario
 - [ ] Modificação de Usuario
 - [ ] Remoção de Usuario
 - [ ] Definir Usuario Adm
