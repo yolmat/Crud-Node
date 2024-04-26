@@ -1,16 +1,17 @@
-version: "3"
+# Inicia container
+version: "3" #seleciona a versão
 
 services:
   db-postgres-CRUD-node:
-    image: postgres:alpine
+    image: postgres:alpine # Seleciona qual imagem devera usar
     ports:
-      - "5435:5432"
-    container_name: "db-postgres-CRUD-node"
+      - "5435:5432" # Seleciona a porta que esse banco de dados ira utilizar
+    container_name: "db-postgres-CRUD-node" # Nome do Container
     volumes:
-      - ./banco-de-dados-CRUD-node:/var/lib/postgresql/data
+      - ./banco-de-dados-CRUD-node:/var/lib/postgresql/data # Seleciona o volume do container
     environment:
-      POSTGRES_USER: pguser
-      POSTGRES_PASSWORD: pgpassword
+      POSTGRES_USER: pguser # Cria o Usuaio do postgres
+      POSTGRES_PASSWORD: pgpassword # Cria a senha do postgres
 
 volumes:
-  banco-de-dados-CRUD-node:
+  banco-de-dados-CRUD-node: # cria o volume

@@ -1,25 +1,23 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
+// Client Prisma
 generator client {
   provider = "prisma-client-js"
 }
 
+// Qual banco de dados vamos usar
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider = "postgresql" // Escolhe em qual formato sera o banco
+  url      = env("DATABASE_URL") // Pega o endereço do banco atravez do .env
 }
 
+// Cria um modal (ou uma tabela) dentro do banco de dados
 model User {
-  id       String  @id @default(uuid())
-  name     String
-  email    String  @unique
-  password String  @db.VarChar(12)
-  phone    String?
+  // Cada linha dentro do modal e uma coluna dentro do banco de dados, sendo assim ele cria colunas conforme abaixo
+  id       String  @id @default(uuid()) // Cria o Id no formato de uma String, identica ele como ide, e por padrão o propio banco gera um ID UUID
+  name     String // Cria o nome em formato de uma String
+  email    String  @unique // Cria o Email em formato de uma String e fala que ele precisa ser unico
+  password String  @db.VarChar(12) // Cria uma senha e fala que o limite de caracteres e 12
+  phone    String? // Cria o numero mas diz que ele nao e obrigatoio atravez do ? no final
 
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
+  created_at DateTime @default(now()) // Cria o dia que o dado foi colocado dentro do banco
+  updated_at DateTime @updatedAt // Cria a ultima atualização daquele dado dentro do banco
 }

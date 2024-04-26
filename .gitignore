@@ -1,3 +1,8 @@
+# bibliotecas instaladas
 node_modules
-# Keep environment variables out of version control
+
+# link para o banco
 .env
+
+# backup do banco
+banco-de-dados-CRUD-node
